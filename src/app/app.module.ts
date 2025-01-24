@@ -10,6 +10,8 @@ import { AddProjectComponent } from './projects/add-project/add-project.componen
 import { EditProjectComponent } from './projects/edit-project/edit-project.component';
 import { ViewProjectComponent } from './projects/view-project/view-project.component';
 import { AllProjectsComponent } from './projects/all-projects/all-projects.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AllProjectsComponent } from './projects/all-projects/all-projects.compo
     AddProjectComponent,
     EditProjectComponent,
     ViewProjectComponent,
-    AllProjectsComponent
+    AllProjectsComponent,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

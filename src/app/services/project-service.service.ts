@@ -9,7 +9,13 @@ import { Router } from '@angular/router';
 export class ProjectServiceService {
   projects=Projects_List;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router) {
+    const projects=localStorage.getItem("projects");
+
+    if(projects){
+      this.projects=JSON.parse(projects);
+    }
+   }
 
   addProject(taskName:string, projectName:string, assignedTo:string){
     const newProject:Project={
@@ -25,5 +31,18 @@ export class ProjectServiceService {
 
   getProjectById(id:string){
     return this.projects.find(project => project.id === id);
+  }
+
+  saveProjects(){
+    localStorage.setItem("projects", JSON.stringify(this.projects));
+  }
+
+  getProjects(){
+    return this.projects;
+  }
+
+  updateProject(project:Project){
+    this.projects=this.projects.map((proj)=>(proj.id===project.id? project:proj));
+    this.saveProjects();
   }
 }
