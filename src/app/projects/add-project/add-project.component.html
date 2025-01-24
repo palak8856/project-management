@@ -1,0 +1,19 @@
+<form [formGroup]="projectForm" (ngSubmit)="submitform()">
+    <label for="task">Task</label>
+    <input type="text" id="task" formControlName="task"/>
+
+    <label for="project">Project</label>
+    <input type="text" id="project" formControlName="project"/>
+
+    <label for="assignedTo">Assigned To</label>
+    <input type="text" id="assignedTo" formControlName="assignedTo"/>
+
+    <label for="status">Status</label>
+    <!-- <select name="" id="status">
+        <option value="">Pending</option>
+        <option value="">In-progress</option>
+        <option value="">Completed</option>
+    </select> -->
+
+    <button type="submit">Add Project</button>
+</form>

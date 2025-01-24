@@ -1,0 +1,12 @@
+<p *ngIf="error">{{error}}</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="submitform()">
+    <label for="email">Email</label>
+    <input type="text" id="email" formControlName="email"/>
+
+    <label for="password">Password</label>
+    <input type="text" id="password" formControlName="password"/>
+
+    <button type="submit" (click)="login()">Login</button>
+    <button type="submit" (click)="register()">Register</button>
+</form>
